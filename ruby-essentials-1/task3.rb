@@ -25,6 +25,10 @@ def equilateral_triangle?(a, b, c)
 end
 
 def check_triangle_type(a, b, c)
+  if a <= 0 || b <= 0 || c <= 0
+    puts "Entered data is not valid"
+  end
+
   puts ''
   if equilateral_triangle?(a, b, c)
     puts "Entered triangle is equilateral and isoceles."
