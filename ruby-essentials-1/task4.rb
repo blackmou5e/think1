@@ -1,15 +1,15 @@
 #!/usr/bin/ruby
 
 def calculate_discriminant(a, b, c)
-  return b**2 - 4 * a * c
+  b**2 - 4 * a * c
 end
 
 def find_first_root(a, b, discriminant)
-  return (-b + Math.sqrt(discriminant)) / (2 * a)
+  (-b + Math.sqrt(discriminant)) / (2 * a)
 end
 
 def find_second_root(a, b, discriminant)
-  return (-b - Math.sqrt(discriminant)) / (2 * a)
+  (-b - Math.sqrt(discriminant)) / (2 * a)
 end
 
 
