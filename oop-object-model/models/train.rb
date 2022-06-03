@@ -12,7 +12,7 @@ class Train
   @@train_list = []
 
   def initialize(number)
-    self.class.register_instance
+    register_instance
     @number = number
     @type = nil
     @wagons = []

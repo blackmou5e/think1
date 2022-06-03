@@ -20,7 +20,9 @@ module InstanceCounter
     protected
 
     def register_instance
-      self.instances = (instances.nil? ? 1 : instances + 1)
+      self.class.class_eval do
+        self.instances = (instances.nil? ? 1 : instances + 1)
+      end
     end
   end
 end
