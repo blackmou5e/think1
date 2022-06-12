@@ -136,7 +136,7 @@ class Interface
     puts 'Enter train type:'
     TRAIN_TYPES.each { |key, value| puts "#{key}: #{value.name}" }
 
-    input = gets.chomt.to_i
+    input = gets.chomp.to_i
     raise 'Selected wrong type' if input.nil?
 
     TRAIN_TYPES[input]
