@@ -7,7 +7,7 @@ require_relative '../modules/validator'
 class Train
   include Vendor
   include InstanceCounter
-  include Validate
+  include Validator
 
   attr_reader :speed, :current_station, :route, :wagons, :number, :type
 
