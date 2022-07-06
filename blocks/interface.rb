@@ -3,7 +3,6 @@
 class Interface
   FAILURES = 2
   TRAIN_TYPES = { 1 => CargoTrain, 2 => PassengerTrain }
-  WAGON_TYPES = { 1 => CargoTrain, 2 => PassengerTrain }
 
   def call
     loop do
@@ -181,8 +180,13 @@ class Interface
         end
       when 2
         wagon = choose_wagon(true, true)
-        puts 'Enter seats/volume to load:'
-        wagon.load_wagon(gets.to_i)
+        if wagon.type == :passenger
+          wagon.take_place
+          puts 'Seat successfully booked.'
+        else
+          puts 'Enter volume to load: '
+          wagon.load_wagon(gets.to_i)
+        end
       when 0
         break
       end

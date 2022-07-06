@@ -13,16 +13,22 @@ class Wagon
 
   @@wagon_list = []
 
-  def initialize(number, type = :unknown)
+  def initialize(number, capacity, type = :unknown)
     register_instance
     @type = type
     @number = number
+    @total_space = 0
+    @used_space = 0
     validate!
     @@wagon_list << self
   end
 
   def self.wagon_list
     @@wagon_list
+  end
+
+  def free_place
+    @total_space - @used_space
   end
 
   protected

@@ -1,14 +1,13 @@
 # frozen_string_literal: true
 
 require_relative 'wagon'
-require_relative '../modules/wagon_capacity'
 
 class PassengerWagon < Wagon
-  include WagonCapacity
-
   def initialize(number, capacity)
-    @capacity = capacity
-    @busy = 0
-    super(number, :passenger)
+    super(number, capacity, :passenger)
+  end
+
+  def take_place
+    @used_space += 1 if free_place > 0
   end
 end
